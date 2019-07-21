@@ -1,0 +1,13 @@
+
+<img style = "width:50%; height:300px;"src="/fou{{post.image.url}}" alt="??">
+<p>본문 미리보기:{{post.description}} <br>
+<a href="{% url 'comment' post.id %}">댓글달기</a>
+
+{% for aa in post.com.all %}
+
+    {{ aa.author }}
+    {{ aa.message }}
+    <a href="{% url 'upda' aa.id %}">댓글 수정</a>
+    <a href="{% url 'dele' aa.id %}">댓글 삭제</a>
+ 
+{% endfor %}

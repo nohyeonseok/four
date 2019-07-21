@@ -1,0 +1,12 @@
+
+
+<a href ="{% url 'create'%}">글쓰기링크</a>
+
+{% for aa in blogs %}
+<h1>제목:{{aa.title}}</h1>
+<br>
+<a href="{% url 'detail' aa.id %}">자세히</a>
+<a href="{% url 'update' aa.id %}">본문 수정</a>
+<a href="{% url 'delete' aa.id %}">본문 삭제</a>
+    <br>
+{% endfor %}
